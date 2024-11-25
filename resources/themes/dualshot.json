@@ -1,0 +1,12 @@
+{
+  "bg_color": "#737373",
+  "main_color": "#212222",
+  "caret_color": "#212222",
+  "sub_color": "#aaaaaa",
+  "sub_alt_color": "#646464",
+  "text_color": "#212222",
+  "error_color": "#c82931",
+  "error_extra_color": "#ac1823",
+  "colorful_error_color": "#c82931",
+  "colorful_error_extra_color": "#ac1823"
+}

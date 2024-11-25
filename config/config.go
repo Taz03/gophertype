@@ -9,16 +9,16 @@ import (
 	"github.com/taz03/gophertype/config/difficulty"
 	"github.com/taz03/gophertype/config/quick_restart"
 	"github.com/taz03/gophertype/config/stop_on_error"
-	"github.com/taz03/gophertype/config/theme"
 	"github.com/taz03/gophertype/config/timer"
 	"github.com/taz03/gophertype/config/timer_color"
 )
 
 type Config struct {
-	Theme                   theme.Theme                   `json:"theme"`
+	Theme                   string                        `json:"theme"`
+	TransparentBackground   bool                          `json:"transparentBackground"`
 	CustomTheme             bool                          `json:"customTheme"`
 	CustomThemeColors       []string                      `json:"customThemeColors"`
-	FavThemes               []theme.Theme                 `json:"favThemes"`
+	FavThemes               []string                      `json:"favThemes"`
 	ShowKeyTips             bool                          `json:"showKeyTips"`
 	QuickRestart            quick_restart.QuickRestart    `json:"quickRestart"`
 	Punctuation             bool                          `json:"punctuation"`
@@ -77,15 +77,15 @@ type Config struct {
 	MaxLineWidth            int                           `json:"maxLineWidth"`
 }
 
-func New(path string) *Config {
+func New(path string) Config {
 	fileContent, _ := os.ReadFile(path)
 
 	// Fill with default values
 	config := Config{
-		Theme:                   theme.SerikaDark,
+		Theme:                   "sekira_dark",
+        TransparentBackground:   false,
 		CustomTheme:             false,
 		CustomThemeColors:       []string{"#323437", "#e2b714", "#e2b714", "#646669", "#2c2e31", "#d1d0c5", "#ca4754", "#7e2a33", "#ca4754", "#7e2a33"},
-		FavThemes:               []theme.Theme{},
 		ShowKeyTips:             false,
 		QuickRestart:            quick_restart.Tab,
 		Punctuation:             false,
@@ -117,5 +117,5 @@ func New(path string) *Config {
 	}
 	json.Unmarshal(fileContent, &config)
 
-	return &config
+	return config
 }

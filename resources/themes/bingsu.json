@@ -1,0 +1,12 @@
+{
+  "bg_color": "#b8a7aa",
+  "main_color": "#83616e",
+  "caret_color": "#ebe6ea",
+  "sub_color": "#48373d",
+  "sub_alt_color": "#ab989e",
+  "text_color": "#ebe6ea",
+  "error_color": "#921341",
+  "error_extra_color": "#640b2c",
+  "colorful_error_color": "#921341",
+  "colorful_error_extra_color": "#640b2c"
+}
